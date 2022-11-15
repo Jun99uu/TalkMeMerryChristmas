@@ -14,11 +14,21 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Pretendard Variable";
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+  src: local("Pretendard Variable"),
+    url("../public/fonts/PretendardVariable.woff2") format("woff2-variations");
+}
+
 body {
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: "Pretendard Variable";
 }
 
 .index-body {
