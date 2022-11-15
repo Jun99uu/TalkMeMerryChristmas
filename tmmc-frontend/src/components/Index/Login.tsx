@@ -3,7 +3,9 @@ import { faSnowflake } from "@fortawesome/free-solid-svg-icons";
 import { SignUpBox, SignUpContainer } from "../../styles/IndexStyle";
 import { Category } from "../../interface/indexInterface";
 import { Dispatch, SetStateAction, useState } from "react";
-import { Link, Router } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useRecoilState } from "recoil";
+import { recoilAuthState } from "../../states/recoilAuthState";
 
 interface logInProps {
   setCategory: Dispatch<SetStateAction<Category>>;
@@ -14,6 +16,8 @@ export default function SignUp(props: logInProps) {
   const [id, setId] = useState("");
   const [pwd, setPwd] = useState("");
   const [snowballId, setSnowballId] = useState(0);
+  const [authState, setAuthState] = useState(recoilAuthState);
+  //로그인 성공시 authState true로
 
   return (
     <SignUpContainer>

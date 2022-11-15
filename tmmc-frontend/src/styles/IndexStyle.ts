@@ -7,6 +7,7 @@ export const Container = styled.div`
 `;
 
 export const MainBox = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,26 +16,17 @@ export const MainBox = styled.div`
   text-align: center;
   position: absolute;
   z-index: 10;
-  --size: 1vh;
-  top: 15vh;
 
-  @media screen and (max-height: 900px) {
-    top: 8vh;
-    transform: scale(0.8);
-  }
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-  @media screen and (max-height: 850px) {
-    top: 8.5vh;
-    transform: scale(0.8);
-  }
-
-  @media screen and (max-height: 700px) {
-    top: 6vh;
-    transform: scale(0.8);
+  @media screen and (max-width: 400px) {
+    transform: translate(-50%, -50%) scale(0.85);
   }
 
   @media screen and (max-width: 290px) {
-    transform: scale(0.7);
+    transform: translate(-50%, -50%) scale(0.7);
   }
 
   & > .logo {
@@ -51,6 +43,7 @@ export const MainBox = styled.div`
     & > .title {
       font-size: 40px;
       font-family: "ONE-Mobile-POP";
+      text-shadow: 2px 2px 4px #242424;
     }
 
     & > .btn-box {
@@ -97,38 +90,33 @@ export const MainBox = styled.div`
 
 export const SignUpContainer = styled.div`
   width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 10;
 `;
 
 export const SignUpBox = styled.div`
-  width: 100%;
+  width: 85%;
+  height: 70vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 60px;
   white-space: pre-line;
-
-  @media screen and (max-height: 900px) {
-    transform: scale(0.9);
-  }
-
-  @media screen and (max-width: 290px) {
-    transform: scale(0.7);
-  }
 
   & > .title-box {
     display: flex;
     flex-direction: column;
-    align-self: flex-start;
     align-items: flex-start;
     gap: 10px;
     color: white;
-    margin-left: 82px;
+
+    margin-bottom: -10px;
 
     & > .title {
       display: flex;
@@ -142,6 +130,10 @@ export const SignUpBox = styled.div`
     & > .subtitle {
       font-size: 16px;
       font-weight: 200;
+
+      @media screen and (max-width: 420px) {
+        font-size: 14px;
+      }
     }
   }
 
@@ -160,7 +152,7 @@ export const SignUpBox = styled.div`
       flex-direction: column;
       align-items: flex-start;
       gap: 5px;
-      width: 65%;
+      width: 100%;
       padding-right: 10px;
 
       & > label {
@@ -193,8 +185,7 @@ export const SignUpBox = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    width: 60%;
-
+    width: 100%;
     & > .btn {
       width: 100%;
       text-decoration: none;
@@ -254,6 +245,7 @@ export const SignUpBox = styled.div`
 `;
 
 export const CompleteBox = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -262,26 +254,16 @@ export const CompleteBox = styled.div`
   text-align: center;
   position: absolute;
   z-index: 10;
-  --size: 1vh;
-  top: 15vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-  @media screen and (max-height: 900px) {
-    top: 8vh;
-    transform: scale(0.8);
-  }
-
-  @media screen and (max-height: 850px) {
-    top: 8.5vh;
-    transform: scale(0.8);
-  }
-
-  @media screen and (max-height: 700px) {
-    top: 6vh;
-    transform: scale(0.8);
+  @media screen and (max-width: 400px) {
+    transform: translate(-50%, -50%) scale(0.85);
   }
 
   @media screen and (max-width: 290px) {
-    transform: scale(0.7);
+    transform: translate(-50%, -50%) scale(0.7);
   }
 
   & > .logo {
@@ -302,7 +284,7 @@ export const CompleteBox = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 70%;
+    width: 100%;
     white-space: pre-line;
     gap: 25px;
 
@@ -328,7 +310,7 @@ export const CompleteBox = styled.div`
       flex-direction: column;
       gap: 15px;
       align-items: center;
-      width: 100%;
+      width: 90%;
 
       & > button {
         width: 100%;
