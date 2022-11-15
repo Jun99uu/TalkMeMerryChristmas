@@ -110,7 +110,7 @@ export const SignUpBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: 60px;
   white-space: pre-line;
 
   @media screen and (max-height: 900px) {

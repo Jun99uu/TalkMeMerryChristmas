@@ -4,6 +4,7 @@ import IndexMain from "../components/Index/IndexMain";
 import { useState } from "react";
 import SignUp from "../components/Index/SignUp";
 import { Category } from "../interface/indexInterface";
+import Login from "../components/Index/Login";
 
 export default function Index() {
   const [category, setCategory] = useState<Category>(Category.Index);
@@ -12,7 +13,7 @@ export default function Index() {
       {category === Category.Index ? (
         <IndexMain setCategory={setCategory} />
       ) : category === Category.Login ? (
-        <>로그인</>
+        <Login setCategory={setCategory} />
       ) : category === Category.SignUp ? (
         <SignUp setCategory={setCategory} />
       ) : category === Category.Complete ? (
