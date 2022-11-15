@@ -27,7 +27,7 @@ export default function SignUp(props: logInProps) {
             스노우볼 열어보기
             <FontAwesomeIcon icon={faSnowflake} />
           </span>
-          <span className="subtitle">{`내 스노우볼에 목소리가 얼마나 담겼을까요?\n저장된 목소리는 12월 25일 00시 부터 들을 수 있어요.`}</span>
+          <span className="subtitle">{`내 스노우볼에 목소리가 얼마나 담겼을까요?\n목소리 편지는 크리스마스부터 들을 수 있어요.`}</span>
         </div>
         <ul>
           <li>

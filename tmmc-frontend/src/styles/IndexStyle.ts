@@ -109,6 +109,10 @@ export const SignUpBox = styled.div`
   gap: 60px;
   white-space: pre-line;
 
+  @media screen and (max-width: 290px) {
+    transform: scale(0.85);
+  }
+
   & > .title-box {
     display: flex;
     flex-direction: column;
@@ -123,16 +127,19 @@ export const SignUpBox = styled.div`
       align-items: center;
       justify-content: flex-start;
       gap: 5px;
-      font-size: 32px;
+      font-size: 28px;
       font-family: "ONE-Mobile-POP";
     }
 
     & > .subtitle {
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 200;
 
       @media screen and (max-width: 420px) {
         font-size: 14px;
+      }
+      @media screen and (max-width: 290px) {
+        font-size: 13px;
       }
     }
   }
@@ -204,7 +211,7 @@ export const SignUpBox = styled.div`
 
         & > span {
           font-family: "ONE-Mobile-POP";
-          font-size: 16px;
+          font-size: 14px;
           background: linear-gradient(to right, #292c6d, #66363d);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
@@ -231,7 +238,7 @@ export const SignUpBox = styled.div`
 
       & > span {
         font-family: "ONE-Mobile-POP";
-        font-size: 16px;
+        font-size: 14px;
         background: linear-gradient(to right, #292c6d, #66363d);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -260,10 +267,6 @@ export const CompleteBox = styled.div`
 
   @media screen and (max-width: 400px) {
     transform: translate(-50%, -50%) scale(0.85);
-  }
-
-  @media screen and (max-width: 290px) {
-    transform: translate(-50%, -50%) scale(0.7);
   }
 
   & > .logo {
@@ -295,7 +298,7 @@ export const CompleteBox = styled.div`
       gap: 10px;
 
       & > .title {
-        font-size: 32px;
+        font-size: 28px;
         font-family: "ONE-Mobile-POP";
       }
       & > .subtitle {
