@@ -1,13 +1,18 @@
 import { RecoilRoot } from "recoil";
-import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Container, Glass, QrBox } from "./styles/AppStyle";
+import Index from "./pages/Index";
 
 function App() {
   return (
     <RecoilRoot>
       <Container>
         <Glass>
-          <BrowserRouter></BrowserRouter>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Index />} />
+            </Routes>
+          </BrowserRouter>
         </Glass>
       </Container>
       <QrBox>

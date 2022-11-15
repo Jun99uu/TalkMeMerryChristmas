@@ -1,0 +1,92 @@
+import styled from "styled-components";
+
+export const Container = styled.div`
+  width: 100%;
+  height: 100vh;
+  position: relative;
+`;
+
+export const MainBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  color: white;
+  text-align: center;
+  position: absolute;
+  z-index: 10;
+  --size: 1vh;
+  top: 15vh;
+
+  @media screen and (max-height: 900px) {
+    top: 8vh;
+    transform: scale(0.8);
+  }
+
+  @media screen and (max-height: 850px) {
+    top: 8.5vh;
+    transform: scale(0.8);
+  }
+
+  @media screen and (max-height: 700px) {
+    top: 6vh;
+    transform: scale(0.8);
+  }
+
+  & > .logo {
+    width: 45%;
+  }
+
+  & > .info-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    white-space: pre-line;
+    gap: 25px;
+
+    & > .title {
+      font-size: 40px;
+      font-family: "ONE-Mobile-POP";
+    }
+
+    & > .btn-box {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+      width: 100%;
+
+      & > button {
+        width: 100%;
+        height: 40px;
+        border: none;
+        border-radius: 10px;
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        cursor: pointer;
+        transition: all 0.25s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & > span {
+          font-family: "ONE-Mobile-POP";
+          font-size: 16px;
+          background: linear-gradient(to right, #292c6d, #66363d);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+
+        &:active {
+          transform: scale(0.98);
+        }
+      }
+    }
+
+    & > .copyright {
+      font-size: 14px;
+      font-weight: 200;
+      line-height: 18px;
+    }
+  }
+`;
