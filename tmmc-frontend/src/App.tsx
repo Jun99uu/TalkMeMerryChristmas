@@ -2,6 +2,7 @@ import { RecoilRoot } from "recoil";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Container, Glass, QrBox } from "./styles/AppStyle";
 import Index from "./pages/Index";
+import Snowball from "./pages/Snowball";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Index />} />
+              <Route path="/snowball/:snowballId" element={<Snowball />} />
             </Routes>
           </BrowserRouter>
         </Glass>

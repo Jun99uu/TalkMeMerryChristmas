@@ -153,7 +153,7 @@ export const SignUpBox = styled.div`
     flex-direction: column;
     align-items: center;
     width: 100%;
-    gap: 20px;
+    gap: 10px;
 
     & > li {
       display: flex;
@@ -194,6 +194,36 @@ export const SignUpBox = styled.div`
     align-items: center;
     gap: 10px;
     width: 60%;
+
+    & > .btn {
+      width: 100%;
+      text-decoration: none;
+      & > button {
+        width: 100%;
+        height: 35px;
+        border: none;
+        border-radius: 10px;
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        cursor: pointer;
+        transition: all 0.25s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & > span {
+          font-family: "ONE-Mobile-POP";
+          font-size: 16px;
+          background: linear-gradient(to right, #292c6d, #66363d);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+
+        &:active {
+          transform: scale(0.98);
+        }
+      }
+    }
 
     & > button {
       width: 100%;

@@ -3,6 +3,7 @@ import { faSnowflake } from "@fortawesome/free-solid-svg-icons";
 import { SignUpBox, SignUpContainer } from "../../styles/IndexStyle";
 import { Category } from "../../interface/indexInterface";
 import { Dispatch, SetStateAction, useState } from "react";
+import { Link, Router } from "react-router-dom";
 
 interface logInProps {
   setCategory: Dispatch<SetStateAction<Category>>;
@@ -12,6 +13,7 @@ export default function SignUp(props: logInProps) {
   const { setCategory } = props;
   const [id, setId] = useState("");
   const [pwd, setPwd] = useState("");
+  const [snowballId, setSnowballId] = useState(0);
 
   return (
     <SignUpContainer>
@@ -46,9 +48,11 @@ export default function SignUp(props: logInProps) {
           </li>
         </ul>
         <div className="btn-box">
-          <button>
-            <span>스노우볼 열어보기</span>
-          </button>
+          <Link to={`/snowball/${snowballId}`} className="btn">
+            <button>
+              <span>스노우볼 열어보기</span>
+            </button>
+          </Link>
           <button onClick={() => setCategory(Category.SignUp)}>
             <span>스노우볼 만들기</span>
           </button>
