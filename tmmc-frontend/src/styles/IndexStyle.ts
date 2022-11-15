@@ -131,6 +131,10 @@ export const SignUpBox = styled.div`
     margin-left: 82px;
 
     & > .title {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 5px;
       font-size: 32px;
       font-family: "ONE-Mobile-POP";
     }
@@ -143,7 +147,7 @@ export const SignUpBox = styled.div`
 
   & > ul {
     list-style-type: none;
-    margin: 0px;
+    margin: -10px 0px 0px 0px;
     padding: 0px;
     display: flex;
     flex-direction: column;
