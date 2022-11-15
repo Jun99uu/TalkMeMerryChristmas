@@ -62,7 +62,7 @@ export default function SignUp(props: signUpProps) {
           </li>
         </ul>
         <div className="btn-box">
-          <button>
+          <button onClick={() => setCategory(Category.Complete)}>
             <span>스노우볼 만들기</span>
           </button>
           <button onClick={() => setCategory(Category.Index)}>

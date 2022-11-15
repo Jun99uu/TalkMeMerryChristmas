@@ -5,6 +5,7 @@ import { useState } from "react";
 import SignUp from "../components/Index/SignUp";
 import { Category } from "../interface/indexInterface";
 import Login from "../components/Index/Login";
+import Complete from "../components/Index/Complete";
 
 export default function Index() {
   const [category, setCategory] = useState<Category>(Category.Index);
@@ -17,7 +18,7 @@ export default function Index() {
       ) : category === Category.SignUp ? (
         <SignUp setCategory={setCategory} />
       ) : category === Category.Complete ? (
-        <>회원가입완료</>
+        <Complete setCategory={setCategory} />
       ) : (
         <></>
       )}
