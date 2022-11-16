@@ -43,3 +43,41 @@ export const TitleBox = styled.div`
     }
   }
 `;
+
+export const CanvasTitle = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 10vh 0px 0px 0px;
+
+  & > .title {
+    font-family: "ONE-Mobile-POP";
+    font-size: 24px;
+    color: white;
+    text-shadow: 2px 2px 4px #242424;
+    white-space: pre-line;
+  }
+
+  & > button {
+    width: 55%;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #292c6d, #e84a5f);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    font-size: 16px;
+    font-weight: 800;
+    color: #eaeaea;
+    cursor: pointer;
+    transition: all 0.25s;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+`;

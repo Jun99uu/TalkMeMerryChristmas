@@ -5,8 +5,13 @@ import InputInfo from "./InputInfo";
 import InputVoice from "./InputVoice";
 import SelectObj from "./SelectObj";
 import InputMerry from "./InputMerry";
-import { useResetRecoilState } from "recoil";
-import { recoilDecoState } from "../../states/recoilDecorateState";
+import { useResetRecoilState, useRecoilState } from "recoil";
+import {
+  recoilDecoState,
+  recoilCanvasStage,
+  CanvasStage,
+  FinalStage,
+} from "../../states/recoilDecorateState";
 
 interface modalProps {
   close: () => void;
@@ -16,9 +21,16 @@ export default function ModalLayout(props: modalProps) {
   const { close } = props;
   const [stage, setStage] = useState(Stage.InputInfo);
   const reset = useResetRecoilState(recoilDecoState);
+  const [canvasStage, setCanvasStage] = useRecoilState(recoilCanvasStage);
 
   const closeModal = () => {
     reset();
+    close();
+  };
+
+  const toFinalStage = () => {
+    const final: CanvasStage = { isCanvasStage: FinalStage.Placement };
+    setCanvasStage(final);
     close();
   };
 
@@ -31,7 +43,7 @@ export default function ModalLayout(props: modalProps) {
       ) : stage === Stage.InputVoice ? (
         <InputVoice setStage={setStage} close={closeModal} />
       ) : stage === Stage.InputMerry ? (
-        <InputMerry setStage={setStage} close={closeModal} />
+        <InputMerry close={closeModal} toFinalStage={toFinalStage} />
       ) : (
         <></>
       )}

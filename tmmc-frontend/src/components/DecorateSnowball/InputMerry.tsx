@@ -1,5 +1,4 @@
-import { Dispatch, SetStateAction, useState, useEffect } from "react";
-import { Stage } from "../../interface/decorateInterface";
+import { useState } from "react";
 import { Container, RecordBox } from "../../styles/DecorateStyle";
 import { useRecoilState } from "recoil";
 import { recoilDecoState, Decoration } from "../../states/recoilDecorateState";
@@ -10,12 +9,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStop } from "@fortawesome/free-solid-svg-icons";
 
 interface merryProps {
-  setStage: Dispatch<SetStateAction<Stage>>;
   close: () => void;
+  toFinalStage: () => void;
 }
 
 export default function InputMerry(props: merryProps) {
-  const { setStage, close } = props;
+  const { close, toFinalStage } = props;
   const [deco, setDeco] = useRecoilState(recoilDecoState);
   const [err, setErr] = useState(false);
   const [timer, setTimer] = useState(5);
@@ -58,7 +57,7 @@ export default function InputMerry(props: merryProps) {
         personalVoice: deco.personalVoice,
       };
       setDeco(newDecoInfo);
-      setStage(Stage.InputMerry);
+      toFinalStage();
     }
   };
 
