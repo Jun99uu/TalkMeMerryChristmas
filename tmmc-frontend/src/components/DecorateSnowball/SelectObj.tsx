@@ -38,7 +38,7 @@ export default function SelectObj(props: objProps) {
   return (
     <Container>
       <div className="title-box">
-        <span className="title">스노우볼 꾸미기</span>
+        <span className="title">스노우볼 꾸미기 (2/4)</span>
         <span className="subtitle">오브제를 선택해주세요.</span>
       </div>
       <div className="content-box">

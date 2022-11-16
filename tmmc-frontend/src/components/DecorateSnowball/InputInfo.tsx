@@ -35,7 +35,7 @@ export default function InputInfo(props: infoProps) {
   return (
     <Container>
       <div className="title-box">
-        <span className="title">스노우볼 꾸미기</span>
+        <span className="title">스노우볼 꾸미기 (1/4)</span>
         <span className="subtitle">이름과 함께 짧은 편지를 적어보아요.</span>
       </div>
       <div className="content-box">
@@ -48,6 +48,7 @@ export default function InputInfo(props: infoProps) {
               placeholder="당신의 이름을 적어주세요."
               value={name}
               onChange={(e) => setName(e.target.value)}
+              maxLength={5}
             />
           </li>
           <li>
@@ -58,6 +59,7 @@ export default function InputInfo(props: infoProps) {
               placeholder="짧은 편지를 작성해주세요."
               value={comment}
               onChange={(e) => setComment(e.target.value)}
+              maxLength={30}
             />
           </li>
         </InputBox>
