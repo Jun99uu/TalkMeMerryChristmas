@@ -5,6 +5,8 @@ import BaseSnowball from "./BaseSnowball";
 import { Container, TitleBox } from "../../styles/SnowballStyle";
 import { useState } from "react";
 import Notice from "../Notice";
+import BasicModal from "../BasicModal";
+import ModalLayout from "../DecorateSnowball/ModalLayout";
 
 interface layoutProps {
   info: SnowballInterface;
@@ -15,6 +17,7 @@ export default function Layout(props: layoutProps) {
   const [authState, setAuthState] = useRecoilState(recoilAuthState);
   const [over, setOver] = useState(false);
   const [overMsg, setOverMsg] = useState("크리스마스 정각에 공개됩니다!🎄");
+  const [open, setOpen] = useState(false);
 
   return (
     <Container>
@@ -31,12 +34,15 @@ export default function Layout(props: layoutProps) {
             </>
           ) : (
             <>
-              <button>스노우볼 꾸미기</button>
+              <button onClick={() => setOpen(true)}>스노우볼 꾸미기</button>
             </>
           )}
         </div>
       </TitleBox>
       <BaseSnowball objs={info.objectList} />
+      <BasicModal open={open}>
+        <ModalLayout close={() => setOpen(false)} />
+      </BasicModal>
     </Container>
   );
 }

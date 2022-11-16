@@ -30,7 +30,7 @@ export default function Notice(props: noticeProps) {
 }
 
 const Container = styled.div<{ position: number }>`
-  width: 50%;
+  width: 60%;
   padding: 10px 20px;
   background: #242424;
   backdrop-filter: blur(4px);
