@@ -24,8 +24,6 @@ export default function InputInfo(props: infoProps) {
         objectId: deco.objectId,
         commonVoice: deco.commonVoice,
         personalVoice: deco.personalVoice,
-        width: deco.width,
-        height: deco.height,
         top: deco.top,
         left: deco.left,
       };

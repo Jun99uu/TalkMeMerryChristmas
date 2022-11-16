@@ -56,8 +56,6 @@ export default function InputVoice(props: voiceProps) {
         objectId: deco.objectId,
         commonVoice: deco.commonVoice,
         personalVoice: getAudioFile(),
-        width: deco.width,
-        height: deco.height,
         top: deco.top,
         left: deco.left,
       };
