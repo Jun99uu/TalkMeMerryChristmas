@@ -101,9 +101,21 @@ export const InputBox = styled.ul`
 
 export const ObjsBox = styled.div`
   width: 100%;
+  height: 60vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 15px;
+  &::-webkit-scrollbar {
+    width: 3px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #4c6f81;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #00ff0000;
+  }
 
   & > input {
     display: none;

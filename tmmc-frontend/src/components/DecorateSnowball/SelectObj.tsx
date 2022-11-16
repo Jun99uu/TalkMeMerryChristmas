@@ -16,6 +16,18 @@ const tmpItems = [
   "https://cdn-icons-png.flaticon.com/512/290/290441.png",
   "https://clipartart.com/images/babybwith-mittens-clipart-8.png",
   "https://creazilla-store.fra1.digitaloceanspaces.com/icons/7914438/winter-icon-sm.png",
+  "https://cdn-icons-png.flaticon.com/512/74/74558.png",
+  "https://cdn-icons-png.flaticon.com/512/642/642012.png",
+  "https://cdn-icons-png.flaticon.com/512/2077/2077008.png",
+  "https://cdn-icons-png.flaticon.com/512/290/290441.png",
+  "https://clipartart.com/images/babybwith-mittens-clipart-8.png",
+  "https://creazilla-store.fra1.digitaloceanspaces.com/icons/7914438/winter-icon-sm.png",
+  "https://cdn-icons-png.flaticon.com/512/74/74558.png",
+  "https://cdn-icons-png.flaticon.com/512/642/642012.png",
+  "https://cdn-icons-png.flaticon.com/512/2077/2077008.png",
+  "https://cdn-icons-png.flaticon.com/512/290/290441.png",
+  "https://clipartart.com/images/babybwith-mittens-clipart-8.png",
+  "https://creazilla-store.fra1.digitaloceanspaces.com/icons/7914438/winter-icon-sm.png",
 ];
 
 export default function SelectObj(props: objProps) {
