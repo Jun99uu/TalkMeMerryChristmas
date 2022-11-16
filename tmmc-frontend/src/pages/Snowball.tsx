@@ -2,6 +2,8 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { SnowballInterface, Object } from "../interface/snowballInterface";
 import Layout from "../components/Snowball/Layout";
+import Snow from "../styles/Snow";
+import styled from "styled-components";
 
 export default function Snowball() {
   const { snowballId } = useParams(); //스노우볼 고유 아이디
@@ -41,6 +43,22 @@ export default function Snowball() {
   }, []);
 
   return (
-    <div className="container">{info ? <Layout info={info} /> : <></>}</div>
+    <div className="container">
+      <Snow />
+      {info ? (
+        <ContentBox>
+          <Layout info={info} />
+        </ContentBox>
+      ) : (
+        <></>
+      )}
+    </div>
   );
 }
+
+const ContentBox = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+`;

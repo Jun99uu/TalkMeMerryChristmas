@@ -72,7 +72,7 @@ const Div = styled.div`
   z-index: 1;
 
   @media screen and (max-width: 500px) {
-    left: 50px;
+    /* left: 50px; */
   }
 
   .snowflake {
