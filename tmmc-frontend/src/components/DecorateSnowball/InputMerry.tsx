@@ -55,6 +55,10 @@ export default function InputMerry(props: merryProps) {
         objectId: deco.objectId,
         commonVoice: getAudioFile(),
         personalVoice: deco.personalVoice,
+        width: deco.width,
+        height: deco.height,
+        top: deco.top,
+        left: deco.left,
       };
       setDeco(newDecoInfo);
       toFinalStage();

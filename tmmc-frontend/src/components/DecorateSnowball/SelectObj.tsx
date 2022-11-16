@@ -30,6 +30,10 @@ export default function SelectObj(props: objProps) {
       objectId: objId,
       commonVoice: deco.commonVoice,
       personalVoice: deco.personalVoice,
+      width: deco.width,
+      height: deco.height,
+      top: deco.top,
+      left: deco.left,
     };
     setDeco(newDecoInfo);
     setStage(Stage.InputVoice);

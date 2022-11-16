@@ -6,6 +6,10 @@ export interface Decoration {
   objectId: number;
   commonVoice: File | null;
   personalVoice: File | null;
+  width: number;
+  height: number;
+  top: number;
+  left: number;
 }
 
 const defaultDeco: Decoration = {
@@ -14,6 +18,10 @@ const defaultDeco: Decoration = {
   objectId: 0,
   commonVoice: null,
   personalVoice: null,
+  width: 0,
+  height: 0,
+  top: 0,
+  left: 0,
 };
 
 export enum FinalStage {
