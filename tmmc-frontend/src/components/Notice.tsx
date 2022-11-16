@@ -9,7 +9,6 @@ interface noticeProps {
 
 export default function Notice(props: noticeProps) {
   const { content, over, setOver } = props;
-  // const noticeRef = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState(-100);
 
   useEffect(() => {
