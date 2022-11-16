@@ -9,13 +9,26 @@ interface objInterface {
 export default function BaseSnowball(props: objInterface) {
   const { objs } = props;
   return (
-    <Container>
-      <Snowball>
-        <SnowballTop />
-        <SnowballBottom />
-      </Snowball>
-      <img src={basetree} alt="base-tree" className="base-tree" />
-    </Container>
+    <>
+      <Container>
+        <Snowball>
+          <SnowballTop />
+          <SnowballBottom />
+        </Snowball>
+        <img src={basetree} alt="base-tree" className="base-tree" />
+      </Container>
+      {objs.map((obj, index) => (
+        <Obj
+          x={obj.left}
+          y={obj.top}
+          className="object"
+          key={`${obj.objectUrl}-${index}`}
+        >
+          <img src={obj.objectUrl} alt={obj.writer} />
+          <span>{obj.writer}</span>
+        </Obj>
+      ))}
+    </>
   );
 }
 
@@ -59,4 +72,47 @@ const SnowballTop = styled.div`
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(7px);
   -webkit-backdrop-filter: blur(7px);
+`;
+
+const Obj = styled.div<{ x: number; y: number }>`
+  position: absolute;
+  width: 80px;
+  transform: ${(props) => `translate(${props.x}px, ${props.y}px)`};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  @media screen and (max-height: 855px) {
+    transform: ${(props) =>
+      `translate(${props.x}px, ${props.y > 510 ? 510 : props.y}px)`};
+  }
+  @media screen and (max-height: 760px) {
+    transform: ${(props) =>
+      `translate(${props.x}px, ${props.y > 440 ? 440 : props.y}px)`};
+  }
+  @media screen and (max-height: 680px) {
+    transform: ${(props) =>
+      `translate(${props.x}px, ${props.y > 380 ? 380 : props.y}px)`};
+  }
+  @media screen and (max-height: 550px) {
+    transform: ${(props) =>
+      `translate(${props.x}px, ${props.y > 300 ? 300 : props.y}px)`};
+  }
+  @media screen and (max-height: 520px) {
+    transform: ${(props) =>
+      `translate(${props.x}px, ${props.y > 250 ? 250 : props.y}px)`};
+  }
+
+  & > img {
+    width: 100%;
+  }
+
+  & > span {
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    text-shadow: 1px 1px 2px #242424;
+  }
 `;
