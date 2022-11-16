@@ -58,7 +58,7 @@ export default function InputVoice(props: voiceProps) {
         personalVoice: getAudioFile(),
       };
       setDeco(newDecoInfo);
-      setStage(Stage.SelectObj);
+      setStage(Stage.InputMerry);
     }
   };
 

@@ -177,4 +177,22 @@ export const RecordBox = styled.div`
   & > audio {
     height: 40px;
   }
+
+  & > .merry-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+
+    & > .title {
+      font-family: "ONE-Mobile-POP";
+      color: #304652;
+      font-size: 18px;
+    }
+
+    & > .subtitle {
+      font-size: 15px;
+      color: #304652;
+    }
+  }
 `;
