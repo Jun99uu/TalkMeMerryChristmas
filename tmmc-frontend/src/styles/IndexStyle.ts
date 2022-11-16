@@ -283,6 +283,10 @@ export const CompleteBox = styled.div`
     animation: spin 15s linear infinite;
   }
 
+  & > .logo-c {
+    width: 50%;
+  }
+
   & > .info-box {
     display: flex;
     flex-direction: column;

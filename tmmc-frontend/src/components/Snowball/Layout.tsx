@@ -8,6 +8,7 @@ import {
 import { Container } from "../../styles/SnowballStyle";
 import NonFinal from "./NonFinal";
 import Placement from "./Placement";
+import Complete from "./Complete";
 
 interface layoutProps {
   info: SnowballInterface;
@@ -24,7 +25,7 @@ export default function Layout(props: layoutProps) {
       ) : canvasStage.isCanvasStage === FinalStage.Placement ? (
         <Placement info={info} />
       ) : (
-        <></>
+        <Complete />
       )}
     </Container>
   );
