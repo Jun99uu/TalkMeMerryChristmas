@@ -136,3 +136,45 @@ export const ObjsBox = styled.div`
     }
   }
 `;
+
+export const RecordBox = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  & > button {
+    width: 30%;
+    aspect-ratio: 1/1;
+    border: none;
+    border-radius: 100%;
+    background-color: #304652;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: all 0.25s;
+    color: white;
+    font-size: 42px;
+
+    & > img {
+      width: 65%;
+    }
+
+    &:hover {
+      transform: scale(1.02);
+    }
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+
+  & > span {
+    font-size: 14px;
+    white-space: pre-line;
+    text-align: center;
+    color: #304652;
+  }
+
+  & > audio {
+    height: 40px;
+  }
+`;
