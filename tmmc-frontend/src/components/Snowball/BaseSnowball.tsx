@@ -1,6 +1,6 @@
 import { SnowballInterface, Object } from "../../interface/snowballInterface";
 import styled from "styled-components";
-import basetree from "../../res/basetree.png";
+import basetree from "../../res/tree4.png";
 
 interface objInterface {
   objs: Array<Object>;
