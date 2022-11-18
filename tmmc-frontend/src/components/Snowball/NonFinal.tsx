@@ -5,6 +5,11 @@ import { SnowballInterface } from "../../interface/snowballInterface";
 import { useState } from "react";
 import { useRecoilState } from "recoil";
 import { recoilAuthState, AuthState } from "../../states/recoilAuthState";
+import {
+  recoilCanvasStage,
+  FinalStage,
+  CanvasStage,
+} from "../../states/recoilDecorateState";
 import { TitleBox } from "../../styles/SnowballStyle";
 import BaseSnowball from "./BaseSnowball";
 
@@ -15,9 +20,22 @@ interface nonProps {
 export default function NonFinal(props: nonProps) {
   const { info } = props;
   const [authState, setAuthState] = useRecoilState(recoilAuthState);
+  const [cansvasStage, setCanvasStage] = useRecoilState(recoilCanvasStage);
   const [over, setOver] = useState(false);
   const [overMsg, setOverMsg] = useState("크리스마스 정각에 공개됩니다!🎄");
   const [open, setOpen] = useState(false);
+
+  const christmas = new Date("2022-11-18");
+  const now = new Date();
+
+  const openVoiceBox = () => {
+    if (now >= christmas) {
+      const voiceStage: CanvasStage = { isCanvasStage: FinalStage.VoiceBox };
+      setCanvasStage(voiceStage);
+    } else {
+      setOver(true);
+    }
+  };
 
   return (
     <>
@@ -29,7 +47,7 @@ export default function NonFinal(props: nonProps) {
           <button onClick={() => setOver(true)}>메리크리스마스!</button>
           {authState === AuthState.Auth ? (
             <>
-              <button onClick={() => setOver(true)}>목소리 듣기</button>
+              <button onClick={() => openVoiceBox()}>목소리 듣기</button>
               <button>공유하기</button>
             </>
           ) : (
