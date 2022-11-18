@@ -3,7 +3,7 @@ import { faSnowflake } from "@fortawesome/free-solid-svg-icons";
 import { SignUpBox, SignUpContainer } from "../../styles/IndexStyle";
 import { Category } from "../../interface/indexInterface";
 import { Dispatch, SetStateAction, useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { recoilAuthState, AuthState } from "../../states/recoilAuthState";
 
@@ -17,11 +17,13 @@ export default function SignUp(props: logInProps) {
   const [pwd, setPwd] = useState("");
   const [snowballId, setSnowballId] = useState(0);
   const [authState, setAuthState] = useRecoilState(recoilAuthState);
+  const navigate = useNavigate();
 
   const login = () => {
     //로그인 통신 구문 추가
     const logined = AuthState.Auth;
     setAuthState(logined);
+    navigate(`/snowball/${snowballId}`);
   };
 
   return (
@@ -57,11 +59,11 @@ export default function SignUp(props: logInProps) {
           </li>
         </ul>
         <div className="btn-box">
-          <Link to={`/snowball/${snowballId}`} className="btn">
-            <button>
-              <span>스노우볼 열어보기</span>
-            </button>
-          </Link>
+          {/* <Link to={`/snowball/${snowballId}`} className="btn"> */}
+          <button onClick={() => login()}>
+            <span>스노우볼 열어보기</span>
+          </button>
+          {/* </Link> */}
           <button onClick={() => setCategory(Category.SignUp)}>
             <span>스노우볼 만들기</span>
           </button>
