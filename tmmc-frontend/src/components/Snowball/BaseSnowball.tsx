@@ -1,6 +1,6 @@
 import { SnowballInterface, Object } from "../../interface/snowballInterface";
 import styled from "styled-components";
-import basetree from "../../res/basetree.png";
+import basetree from "../../res/tree4.png";
 
 interface objInterface {
   objs: Array<Object>;
@@ -76,12 +76,11 @@ const SnowballTop = styled.div`
 
 const Obj = styled.div<{ x: number; y: number }>`
   position: absolute;
-  width: 80px;
+  height: 80px;
   transform: ${(props) => `translate(${props.x}px, ${props.y}px)`};
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
 
   @media screen and (max-height: 855px) {
     transform: ${(props) =>
@@ -105,7 +104,7 @@ const Obj = styled.div<{ x: number; y: number }>`
   }
 
   & > img {
-    width: 100%;
+    height: 100%;
   }
 
   & > span {

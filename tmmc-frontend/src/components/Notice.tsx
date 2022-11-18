@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useEffect, useRef, useState, Dispatch, SetStateAction } from "react";
+import { useEffect, useState, Dispatch, SetStateAction } from "react";
 
 interface noticeProps {
   content: string;
@@ -45,7 +45,7 @@ const Container = styled.div<{ position: number }>`
   top: ${(props) => `${props.position}px`};
   left: 50%;
   transform: translateX(-50%);
-  z-index: 50;
+  z-index: 999999;
   transition: all 0.25s ease;
   cursor: default;
 

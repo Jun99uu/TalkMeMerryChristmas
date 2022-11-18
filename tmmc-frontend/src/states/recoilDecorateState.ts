@@ -24,6 +24,7 @@ export enum FinalStage {
   NonFinal, //요소 배치단계 들어가기 전
   Placement, //요소 배치단계
   Complete, //완료
+  VoiceBox, //목소리 편지 듣기
 }
 
 export interface CanvasStage {

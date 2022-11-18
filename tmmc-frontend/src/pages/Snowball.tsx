@@ -14,33 +14,36 @@ export default function Snowball() {
     //임시데이터
     const tmpObj1: Object = {
       writer: "산타",
-      objectUrl: "https://cdn-icons-png.flaticon.com/512/642/642012.png",
+      objectUrl:
+        "https://tmmc-bucket.s3.ap-northeast-2.amazonaws.com/objets/행운.png",
       left: 293,
       top: 575,
     };
     const tmpObj2: Object = {
       writer: "루돌프",
-      objectUrl: "https://cdn-icons-png.flaticon.com/512/2077/2077008.png",
+      objectUrl:
+        "https://tmmc-bucket.s3.ap-northeast-2.amazonaws.com/objets/하트.png",
       left: 77,
       top: 526,
     };
     const tmpObj3: Object = {
       writer: "코딱지",
-      objectUrl: "https://cdn-icons-png.flaticon.com/512/290/290441.png",
+      objectUrl:
+        "https://tmmc-bucket.s3.ap-northeast-2.amazonaws.com/objets/쿠키.png",
       left: 33,
       top: 294,
     };
     const tmpObj4: Object = {
       writer: "빨개요",
       objectUrl:
-        "https://clipartart.com/images/babybwith-mittens-clipart-8.png",
+        "https://tmmc-bucket.s3.ap-northeast-2.amazonaws.com/objets/촛불.png",
       left: 250,
       top: 58,
     };
     const tmpObj5: Object = {
       writer: "겨울좋아",
       objectUrl:
-        "https://creazilla-store.fra1.digitaloceanspaces.com/icons/7914438/winter-icon-sm.png",
+        "https://tmmc-bucket.s3.ap-northeast-2.amazonaws.com/objets/찬별.png",
       left: 64,
       top: 4,
     };
