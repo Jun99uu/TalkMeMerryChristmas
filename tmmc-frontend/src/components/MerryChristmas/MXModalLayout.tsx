@@ -22,18 +22,29 @@ export default function MXModalLayout(props: modalProps) {
         <span className="title">메리 크리스마스!</span>
         <span className="subtitle">{`${cnt}명의 친구들이 나를 위해 외쳐준\n"메리 크리스마스" 입니다.`}</span>
       </div>
-      <audio src="" controls>
+      <audio
+        src="https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3"
+        controls
+      >
         지원되지 않는 브라우저입니다.
       </audio>
+      <span className="consolation">{`2022년도 고생 많았어요.\n22023년은 더 행복할거에요!`}</span>
       <ul className="btn-box">
-        <li>
+        {/* <li>
           <button>
             <FontAwesomeIcon icon={faShare} />
           </button>
-          <span>인스타그램으로 공유하기</span>
-        </li>
+          <span>스노우볼 링크 공유하기</span>
+        </li> */}
         <li>
-          <button>
+          <button
+            onClick={() =>
+              window.open(
+                "https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3",
+                "_blank"
+              )
+            }
+          >
             <FontAwesomeIcon icon={faCircleDown} />
           </button>
           <span>저장하기</span>
