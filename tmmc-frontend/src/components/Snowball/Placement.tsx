@@ -15,12 +15,11 @@ import {
   FinalStage,
 } from "../../states/recoilDecorateState";
 import BasicModal from "./../BasicModal";
+import { objList } from "../../res/objects";
 
 interface placementProps {
   info: SnowballInterface;
 }
-
-const tmpImg = "https://cdn-icons-png.flaticon.com/512/2077/2077008.png";
 
 export default function Placement(props: placementProps) {
   const { info } = props;
@@ -78,7 +77,7 @@ export default function Placement(props: placementProps) {
         onStop={handleEnd}
       >
         <CanvasObject ref={nodeRef} style={{ opacity: Opacity ? "0.6" : "1" }}>
-          <img src={tmpImg} alt="object" />
+          <img src={objList[deco.objectId - 1].url} alt="object" />
           <span>
             {over ? `잘못된\n위치입니다.` : `끌어서 위치를\n옮겨보세요`}
           </span>
