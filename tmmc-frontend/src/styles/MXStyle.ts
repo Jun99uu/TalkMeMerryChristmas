@@ -9,6 +9,12 @@ export const Container = styled.div`
   gap: 30px;
   padding: 40px 0px;
 
+  & > .consolation {
+    white-space: pre-line;
+    word-break: keep-all;
+    text-align: center;
+  }
+
   & > .close {
     position: absolute;
     top: 10px;
