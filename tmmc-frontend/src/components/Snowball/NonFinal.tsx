@@ -13,6 +13,7 @@ import {
 import { TitleBox } from "../../styles/SnowballStyle";
 import BaseSnowball from "./BaseSnowball";
 import MXModalLayout from "../MerryChristmas/MXModalLayout";
+import { useNavigate } from "react-router-dom";
 
 interface nonProps {
   info: SnowballInterface;
@@ -26,6 +27,7 @@ export default function NonFinal(props: nonProps) {
   const [overMsg, setOverMsg] = useState("크리스마스 정각에 공개됩니다!🎄");
   const [open, setOpen] = useState(false); //꾸미기 모달 state
   const [mXmasOpen, setmXmasOpen] = useState(false); //메리크리스마스 모달 state
+  const navigate = useNavigate();
 
   const christmas = new Date("2022-11-18");
   const now = new Date();
@@ -68,6 +70,7 @@ export default function NonFinal(props: nonProps) {
           ) : (
             <>
               <button onClick={() => setOpen(true)}>스노우볼 꾸미기</button>
+              <button onClick={() => navigate("/")}>내 스노우볼 만들기</button>
             </>
           )}
         </div>
@@ -77,7 +80,11 @@ export default function NonFinal(props: nonProps) {
         <ModalLayout close={() => setOpen(false)} />
       </BasicModal>
       <BasicModal open={mXmasOpen}>
-        <MXModalLayout close={() => setmXmasOpen(false)} cnt={info.cnt} />
+        <MXModalLayout
+          close={() => setmXmasOpen(false)}
+          cnt={info.cnt}
+          name={info.name}
+        />
       </BasicModal>
     </>
   );

@@ -93,6 +93,7 @@ export const CanvasObject = styled.div`
   cursor: move;
   color: black;
   width: 80px;
+  height: 80px;
   border-radius: 5px;
   padding: 1em;
   margin: auto;
@@ -105,7 +106,7 @@ export const CanvasObject = styled.div`
 
   & > img {
     width: 100%;
-    resize: both;
+    height: 100%;
   }
 
   & > span {

@@ -15,6 +15,11 @@ export const Container = styled.div`
     text-align: center;
   }
 
+  & > .audio-box {
+    position: absolute;
+    opacity: 0;
+  }
+
   & > .close {
     position: absolute;
     top: 10px;
