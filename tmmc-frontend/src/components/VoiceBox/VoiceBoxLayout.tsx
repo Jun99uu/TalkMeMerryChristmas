@@ -11,6 +11,7 @@ import {
   CanvasStage,
   FinalStage,
 } from "../../states/recoilDecorateState";
+import Notice from "../Notice";
 
 interface voiceProps {
   info: SnowballInterface;
@@ -21,6 +22,7 @@ export default function VoiceBoxLayout(props: voiceProps) {
   const [voices, setVoices] = useState<VoiceInfo>();
   const [curItem, setCurItem] = useState(0);
   const scrollRef = useHorizontalScroll();
+  const [over, setOver] = useState(true);
   const [canvasStage, setCanvasStage] = useRecoilState(recoilCanvasStage);
 
   const getVoices = () => {
@@ -125,6 +127,7 @@ export default function VoiceBoxLayout(props: voiceProps) {
 
   return (
     <Container>
+      <Notice over={over} setOver={setOver} content={"메리 크리스마스!🎄"} />
       <TitleBox>
         <span className="title">{`${info.name}님의 편지함이에요.`}</span>
         <span className="subtitle">{`현재까지 ${info.cnt}명이 목소리를 담아줬어요.`}</span>

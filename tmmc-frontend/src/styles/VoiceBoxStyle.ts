@@ -141,7 +141,7 @@ export const VoiceBoxContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 30px;
 
   @media screen and (min-height: 750px) {
     height: 45vh;

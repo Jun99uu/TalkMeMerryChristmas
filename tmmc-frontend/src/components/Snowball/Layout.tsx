@@ -29,8 +29,6 @@ export default function Layout(props: layoutProps) {
         <Complete />
       ) : canvasStage.isCanvasStage === FinalStage.VoiceBox ? (
         <VoiceBoxLayout info={info} />
-      ) : canvasStage.isCanvasStage === FinalStage.MerryChristmas ? (
-        <></>
       ) : (
         <></>
       )}
