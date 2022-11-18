@@ -50,7 +50,7 @@ export default function InputInfo(props: infoProps) {
               placeholder="당신의 이름을 적어주세요."
               value={name}
               onChange={(e) => setName(e.target.value)}
-              maxLength={5}
+              maxLength={10}
             />
           </li>
           <li>
