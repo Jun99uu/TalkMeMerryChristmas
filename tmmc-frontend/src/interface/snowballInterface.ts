@@ -1,12 +1,16 @@
 export interface SnowballInterface {
   name: string;
-  cnt: number;
-  objectList: Array<Object>;
+  messages: Array<Object>;
 }
 
 export interface Object {
   writer: string;
-  objectUrl: string;
+  Objet: ObjectInfo;
   top: number;
   left: number;
+}
+
+export interface ObjectInfo {
+  objetId: number;
+  objetUrl: string;
 }

@@ -6,6 +6,7 @@ import { Dispatch, SetStateAction, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { recoilAuthState, AuthState } from "../../states/recoilAuthState";
+import axios from "axios";
 
 interface logInProps {
   setCategory: Dispatch<SetStateAction<Category>>;
@@ -15,15 +16,34 @@ export default function SignUp(props: logInProps) {
   const { setCategory } = props;
   const [id, setId] = useState("");
   const [pwd, setPwd] = useState("");
-  const [snowballId, setSnowballId] = useState(0);
   const [authState, setAuthState] = useRecoilState(recoilAuthState);
   const navigate = useNavigate();
 
   const login = () => {
     //로그인 통신 구문 추가
-    const logined = AuthState.Auth;
-    setAuthState(logined);
-    navigate(`/snowball/${snowballId}`);
+    axios
+      .post(
+        "http://www.tmmc.shop/api/login",
+        {
+          userId: id,
+          password: pwd,
+        },
+        {
+          headers: {
+            withCredentials: true,
+          },
+        }
+      )
+      .then((res) => {
+        console.log(res);
+        const sId = res.data.ownerId;
+        const logined = AuthState.Auth;
+        setAuthState(logined);
+        navigate(`/snowball/${sId}`);
+      })
+      .catch((res) => {
+        console.log(res);
+      });
   };
 
   return (

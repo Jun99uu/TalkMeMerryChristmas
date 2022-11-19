@@ -10,6 +10,8 @@ export const Container = styled.div`
   padding: 40px 0px;
 
   & > .consolation {
+    font-weight: 700;
+    color: #242424;
     white-space: pre-line;
     word-break: keep-all;
     text-align: center;
@@ -51,6 +53,25 @@ export const Container = styled.div`
       background: linear-gradient(to right, #166214, #e82d46, #3439af);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+    }
+    & > .subtitle {
+      font-size: 14px;
+      color: #242424;
+    }
+  }
+
+  & > .present-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    white-space: pre-line;
+    text-align: center;
+
+    & > img {
+      width: 60px;
+      aspect-ratio: 1/1;
     }
   }
 
@@ -96,7 +117,7 @@ export const Container = styled.div`
         color: white;
       }
       & > span {
-        color: black;
+        color: #e82d46;
       }
     }
   }

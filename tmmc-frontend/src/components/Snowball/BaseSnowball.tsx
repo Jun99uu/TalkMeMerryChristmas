@@ -1,4 +1,8 @@
-import { SnowballInterface, Object } from "../../interface/snowballInterface";
+import {
+  SnowballInterface,
+  Object,
+  ObjectInfo,
+} from "../../interface/snowballInterface";
 import styled from "styled-components";
 import basetree from "../../res/tree4.png";
 
@@ -22,9 +26,9 @@ export default function BaseSnowball(props: objInterface) {
           x={obj.left}
           y={obj.top}
           className="object"
-          key={`${obj.objectUrl}-${index}`}
+          key={`${obj.Objet.objetId}-${index}`}
         >
-          <img src={obj.objectUrl} alt={obj.writer} />
+          <img src={obj.Objet.objetUrl} alt={obj.writer} />
           <span>{obj.writer}</span>
         </Obj>
       ))}

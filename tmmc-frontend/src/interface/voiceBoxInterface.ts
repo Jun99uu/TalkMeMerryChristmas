@@ -1,11 +1,17 @@
 export interface VoiceInfo {
-  ownerName: string;
-  message: Array<Voice>;
+  name: string;
+  messages: Array<Voice>;
 }
 
 export interface Voice {
+  messageId: number;
   writer: string;
   comment: string;
   personalVoice: string;
-  objectUrl: string;
+  Objet: Objet;
+}
+
+export interface Objet {
+  objetId: number;
+  objetUrl: string;
 }

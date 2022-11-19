@@ -16,6 +16,8 @@ import {
 } from "../../states/recoilDecorateState";
 import BasicModal from "./../BasicModal";
 import { objList } from "../../res/objects";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 
 interface placementProps {
   info: SnowballInterface;
@@ -23,6 +25,7 @@ interface placementProps {
 
 export default function Placement(props: placementProps) {
   const { info } = props;
+  const { snowballId } = useParams();
   const nodeRef = useRef(null);
   const [deco, setDeco] = useRecoilState(recoilDecoState);
   const [canvasStage, setCanvasStage] = useRecoilState(recoilCanvasStage);
@@ -58,10 +61,36 @@ export default function Placement(props: placementProps) {
       top: Number(position.y.toFixed(0)),
       left: Number(position.x.toFixed(0)),
     };
-    setOpen(false);
-    setDeco(newDecoInfo);
-    const complete: CanvasStage = { isCanvasStage: FinalStage.Complete };
-    setCanvasStage(complete);
+
+    const multipartFile = new FormData();
+    if (newDecoInfo.commonVoice && newDecoInfo.personalVoice) {
+      multipartFile.append("writer", newDecoInfo.name);
+      multipartFile.append("objetId", `${newDecoInfo.objectId}`);
+      multipartFile.append("top", `${newDecoInfo.top}`);
+      multipartFile.append("left", `${newDecoInfo.left}`);
+      multipartFile.append("commonVoice", newDecoInfo.commonVoice);
+      multipartFile.append("personalVoice", newDecoInfo.personalVoice);
+      multipartFile.append("comment", newDecoInfo.comment);
+
+      axios
+        .post(`http://www.tmmc.shop/api/${snowballId}/new`, multipartFile, {
+          withCredentials: true,
+        })
+        .then((res) => {
+          console.log(res);
+          // 저장 후 action 아래 코드
+          setOpen(false);
+          setDeco(newDecoInfo);
+          const complete: CanvasStage = { isCanvasStage: FinalStage.Complete };
+          setCanvasStage(complete);
+        })
+        .catch((res) => {
+          console.log(res);
+        });
+    } else {
+      alert("음성 녹음을 완료하지 않았습니다.");
+      return -1;
+    }
   };
 
   return (
@@ -83,7 +112,7 @@ export default function Placement(props: placementProps) {
           </span>
         </CanvasObject>
       </Draggable>
-      <BaseSnowball objs={info.objectList} />
+      <BaseSnowball objs={info.messages} />
       <BasicModal open={open}>
         <CanvasModal>
           <div className="title-box">

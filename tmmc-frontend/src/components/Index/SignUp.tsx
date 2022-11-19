@@ -3,6 +3,7 @@ import { faSnowflake } from "@fortawesome/free-solid-svg-icons";
 import { SignUpBox, SignUpContainer } from "../../styles/IndexStyle";
 import { Category } from "../../interface/indexInterface";
 import { Dispatch, SetStateAction, useState } from "react";
+import axios from "axios";
 
 interface signUpProps {
   setCategory: Dispatch<SetStateAction<Category>>;
@@ -13,6 +14,41 @@ export default function SignUp(props: signUpProps) {
   const [name, setName] = useState("");
   const [id, setId] = useState("");
   const [pwd, setPwd] = useState("");
+  const [err, setErr] = useState(false);
+
+  const signUp = () => {
+    const reg = /^[A-Za-z0-9+]*$/;
+    if (name === "" || id === "" || pwd === "" || !reg.test(id)) {
+      setErr(true);
+    } else {
+      setErr(false);
+      signUpAxios();
+    }
+  };
+
+  const signUpAxios = () => {
+    axios
+      .post(
+        "http://www.tmmc.shop/api/user",
+        {
+          name: name,
+          userId: id,
+          password: pwd,
+        },
+        {
+          headers: {
+            withCredentials: true,
+          },
+        }
+      )
+      .then((res) => {
+        console.log(res);
+        setCategory(Category.Complete);
+      })
+      .catch((res) => {
+        console.log(res);
+      });
+  };
 
   return (
     <SignUpContainer>
@@ -59,10 +95,15 @@ export default function SignUp(props: signUpProps) {
             <span>
               {`개인정보는 스노우볼을 열어보기 위해 사용됩니다.\n이 외의 목적으로는 사용되지 않습니다.`}
             </span>
+            {err ? (
+              <span>영어 숫자 아이디를 포함한 모든 정보를 입력해주세요.</span>
+            ) : (
+              <></>
+            )}
           </li>
         </ul>
         <div className="btn-box">
-          <button onClick={() => setCategory(Category.Complete)}>
+          <button onClick={() => signUp()}>
             <span>스노우볼 만들기</span>
           </button>
           <button onClick={() => setCategory(Category.Index)}>
