@@ -158,6 +158,7 @@ export const RecordBox = styled.div`
 
   & > button {
     width: 30%;
+    min-width: 90px;
     aspect-ratio: 1/1;
     border: none;
     border-radius: 100%;
@@ -169,6 +170,8 @@ export const RecordBox = styled.div`
 
     & > img {
       width: 65%;
+      min-width: 50px;
+      aspect-ratio: 1/1.1;
     }
 
     &:hover {

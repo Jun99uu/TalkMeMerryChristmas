@@ -167,4 +167,29 @@ export const VoiceBoxContainer = styled.div`
     height: 40px;
     color: #4c6f81;
   }
+
+  & > button {
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(135deg, #166214, #e82d46, #3439af);
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+      rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    transition: all 0.25s;
+
+    & > span {
+      font-family: "ONE-Mobile-POP";
+      font-size: 16px;
+      color: white;
+      font-weight: 100;
+      /* background: linear-gradient(to right, #166214, #e82d46, #3439af); */
+      /* -webkit-background-clip: text; */
+      /* -webkit-text-fill-color: transparent; */
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
 `;
